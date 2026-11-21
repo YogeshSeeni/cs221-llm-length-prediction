@@ -1,0 +1,170 @@
+{
+  "0.5": {
+    "fcfs": {
+      "mean_latency": 9.722375113153728,
+      "mean_latency_std": 0.36176650322430975,
+      "p99_latency": 40.470889629131705,
+      "p99_latency_std": 6.8361164542849355,
+      "mean_latency_long_jobs": 18.731496324994318,
+      "gap_closed": 0.0,
+      "gap_closed_std": 0.0
+    },
+    "shortest_prompt": {
+      "mean_latency": 9.762892653153703,
+      "mean_latency_std": 0.3374247282294758,
+      "p99_latency": 51.82253970561426,
+      "p99_latency_std": 6.27714531348338,
+      "mean_latency_long_jobs": 18.755388556069953,
+      "gap_closed": -0.03958155201667482,
+      "gap_closed_std": 0.07053087656076837
+    },
+    "pred_logreg": {
+      "mean_latency": 8.834613673153736,
+      "mean_latency_std": 0.21897264268136304,
+      "p99_latency": 42.56593269621292,
+      "p99_latency_std": 2.577392877784007,
+      "mean_latency_long_jobs": 20.213884372803093,
+      "gap_closed": 0.7708401322998217,
+      "gap_closed_std": 0.025697109087895263
+    },
+    "pred_gbm": {
+      "mean_latency": 8.791785173153752,
+      "mean_latency_std": 0.1733999703957037,
+      "p99_latency": 43.241305877204894,
+      "p99_latency_std": 3.5105848200942793,
+      "mean_latency_long_jobs": 20.440003496309092,
+      "gap_closed": 0.8042559769132073,
+      "gap_closed_std": 0.011780549250173999
+    },
+    "oracle_bucket": {
+      "mean_latency": 8.802825733153737,
+      "mean_latency_std": 0.20038862685045664,
+      "p99_latency": 39.104573825468265,
+      "p99_latency_std": 3.991640267385892,
+      "mean_latency_long_jobs": 19.314722221408694,
+      "gap_closed": 0.7971822188075512,
+      "gap_closed_std": 0.01796674058548449
+    },
+    "oracle_sjf": {
+      "mean_latency": 8.567514193153738,
+      "mean_latency_std": 0.14703513616851957,
+      "p99_latency": 39.84231936731565,
+      "p99_latency_std": 1.9127195992663766,
+      "mean_latency_long_jobs": 20.979106882763254,
+      "gap_closed": 1.0,
+      "gap_closed_std": 0.0
+    }
+  },
+  "0.8": {
+    "fcfs": {
+      "mean_latency": 23.943664752704834,
+      "mean_latency_std": 3.062512937499575,
+      "p99_latency": 113.31383947458619,
+      "p99_latency_std": 25.970071679084217,
+      "mean_latency_long_jobs": 33.718160765720505,
+      "gap_closed": 0.0,
+      "gap_closed_std": 0.0
+    },
+    "shortest_prompt": {
+      "mean_latency": 25.131104752704864,
+      "mean_latency_std": 3.7342880286504787,
+      "p99_latency": 296.2164979414891,
+      "p99_latency_std": 82.4905432940753,
+      "mean_latency_long_jobs": 30.303660566517443,
+      "gap_closed": -0.12846462567725414,
+      "gap_closed_std": 0.07039811801008099
+    },
+    "pred_logreg": {
+      "mean_latency": 17.35679345270487,
+      "mean_latency_std": 1.758812037187607,
+      "p99_latency": 176.53904337333537,
+      "p99_latency_std": 28.694704126107574,
+      "mean_latency_long_jobs": 46.34977371392779,
+      "gap_closed": 0.7418669118181395,
+      "gap_closed_std": 0.01154277155172622
+    },
+    "pred_gbm": {
+      "mean_latency": 16.877987292704894,
+      "mean_latency_std": 1.710720423132587,
+      "p99_latency": 163.86298158423696,
+      "p99_latency_std": 28.043631744216185,
+      "mean_latency_long_jobs": 48.359228494804334,
+      "gap_closed": 0.7963929316758223,
+      "gap_closed_std": 0.019212761592415684
+    },
+    "oracle_bucket": {
+      "mean_latency": 17.3569545527049,
+      "mean_latency_std": 1.857843872249326,
+      "p99_latency": 111.76925054883422,
+      "p99_latency_std": 28.42216955236909,
+      "mean_latency_long_jobs": 38.63144004858914,
+      "gap_closed": 0.7435773184852035,
+      "gap_closed_std": 0.016438421580067086
+    },
+    "oracle_sjf": {
+      "mean_latency": 15.055020272704876,
+      "mean_latency_std": 1.217780902928477,
+      "p99_latency": 131.70719078608352,
+      "p99_latency_std": 22.73101616010661,
+      "mean_latency_long_jobs": 56.456459968907936,
+      "gap_closed": 1.0,
+      "gap_closed_std": 0.0
+    }
+  },
+  "0.95": {
+    "fcfs": {
+      "mean_latency": 79.29945438882675,
+      "mean_latency_std": 14.913701004457222,
+      "p99_latency": 264.75256817806337,
+      "p99_latency_std": 49.48898919417383,
+      "mean_latency_long_jobs": 88.63169723308921,
+      "gap_closed": 0.0,
+      "gap_closed_std": 0.0
+    },
+    "shortest_prompt": {
+      "mean_latency": 83.62466350882733,
+      "mean_latency_std": 15.013106420818348,
+      "p99_latency": 1359.4233947537666,
+      "p99_latency_std": 251.42957083363547,
+      "mean_latency_long_jobs": 68.77355838846833,
+      "gap_closed": -0.09742620262339455,
+      "gap_closed_std": 0.023400547641815213
+    },
+    "pred_logreg": {
+      "mean_latency": 46.64312726882705,
+      "mean_latency_std": 8.318354389820982,
+      "p99_latency": 912.0109941825615,
+      "p99_latency_std": 290.37988655735666,
+      "mean_latency_long_jobs": 153.7886251215363,
+      "gap_closed": 0.7133862009326042,
+      "gap_closed_std": 0.019689181527042483
+    },
+    "pred_gbm": {
+      "mean_latency": 45.75008230882701,
+      "mean_latency_std": 8.450117150674057,
+      "p99_latency": 911.5743775907862,
+      "p99_latency_std": 237.74450518295845,
+      "mean_latency_long_jobs": 159.8459006195442,
+      "gap_closed": 0.7337549894045095,
+      "gap_closed_std": 0.03989631755897827
+    },
+    "oracle_bucket": {
+      "mean_latency": 46.20068794882685,
+      "mean_latency_std": 7.43845607616038,
+      "p99_latency": 282.30835958927213,
+      "p99_latency_std": 50.83034879628344,
+      "mean_latency_long_jobs": 118.29417053986249,
+      "gap_closed": 0.7195993479093157,
+      "gap_closed_std": 0.013872268677573246
+    },
+    "oracle_sjf": {
+      "mean_latency": 33.33015578882642,
+      "mean_latency_std": 4.609010940716406,
+      "p99_latency": 573.9609513734624,
+      "p99_latency_std": 159.03737358671944,
+      "mean_latency_long_jobs": 212.99265061954398,
+      "gap_closed": 1.0,
+      "gap_closed_std": 0.0
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "chosen": {
+    "logreg_C": 1.0,
+    "gbm_num_leaves": 63
+  },
+  "test_seen_in_train_fraction": 0.1374,
+  "majority": {
+    "accuracy": 0.4384,
+    "macro_f1": 0.15239154616240266,
+    "kendall_tau": 0.0,
+    "unseen_prompts": {
+      "accuracy": 0.47577092511013214,
+      "macro_f1": 0.16119402985074627,
+      "kendall_tau": 0.0
+    },
+    "confusion": [
+      [
+        0,
+        0,
+        1170,
+        0
+      ],
+      [
+        0,
+        0,
+        1623,
+        0
+      ],
+      [
+        0,
+        0,
+        2192,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0
+      ]
+    ]
+  },
+  "prompt_length_lr": {
+    "accuracy": 0.1398,
+    "macro_f1": 0.11117920014583674,
+    "kendall_tau": 0.007987125617434147,
+    "unseen_prompts": {
+      "accuracy": 0.12265244609320658,
+      "macro_f1": 0.10139039219066773,
+      "kendall_tau": -0.014272953151842663
+    },
+    "confusion": [
+      [
+        557,
+        36,
+        12,
+        565
+      ],
+      [
+        816,
+        84,
+        33,
+        690
+      ],
+      [
+        1137,
+        100,
+        48,
+        907
+      ],
+      [
+        3,
+        1,
+        1,
+        10
+      ]
+    ]
+  },
+  "logreg": {
+    "accuracy": 0.6176,
+    "macro_f1": 0.502736246494037,
+    "kendall_tau": 0.5915834864987479,
+    "unseen_prompts": {
+      "accuracy": 0.5912357987479713,
+      "macro_f1": 0.4751621912712942,
+      "kendall_tau": 0.5462563392347228
+    },
+    "confusion": [
+      [
+        875,
+        239,
+        51,
+        5
+      ],
+      [
+        242,
+        1012,
+        299,
+        70
+      ],
+      [
+        57,
+        494,
+        1194,
+        447
+      ],
+      [
+        1,
+        0,
+        7,
+        7
+      ]
+    ]
+  },
+  "gbm": {
+    "accuracy": 0.6996,
+    "macro_f1": 0.528093033904018,
+    "kendall_tau": 0.6188560301503911,
+    "unseen_prompts": {
+      "accuracy": 0.6737769533967076,
+      "macro_f1": 0.49909459340164564,
+      "kendall_tau": 0.5710722415336901
+    },
+    "confusion": [
+      [
+        882,
+        236,
+        52,
+        0
+      ],
+      [
+        235,
+        978,
+        398,
+        12
+      ],
+      [
+        57,
+        439,
+        1638,
+        58
+      ],
+      [
+        0,
+        1,
+        14,
+        0
+      ]
+    ]
+  },
+  "raw_prompt_tokens_tau": 0.007987125617434147,
+  "gbm_top_features": [
+    "log_chars",
+    "log_prompt_tokens",
+    "in",
+    "n_questions",
+    "log_requested_words",
+    "answer",
+    "are",
+    "write",
+    "article about",
+    "no",
+    "and",
+    "descriptive answer",
+    "the",
+    "is",
+    "chemical"
+  ]
+}
