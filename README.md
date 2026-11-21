@@ -14,7 +14,7 @@ See `docs/proposal.pdf` for the full proposal.
 
 - LMSYS-Chat-1M, Vicuna-13B conversations (about 491k).
 - 50k English, single-turn conversations, split 40k / 5k / 5k into train / validation / test by conversation ID.
-- Labels: response length in tokens, bucketed. Optionally median-of-three regenerated lengths via vLLM to reduce label noise.
+- Labels: response length in tokens (Vicuna-13B v1.5 tokenizer), bucketed.
 
 ## Methods
 
@@ -49,12 +49,13 @@ See `docs/proposal.pdf` for the full proposal.
 ## Repository layout
 
 ```
-docs/        proposal and writeups
-data/        datasets (gitignored, see data/README.md)
-src/         library code: data loading, features, models, simulator, evaluation
-scripts/     entry points for data prep, training, and simulation
-notebooks/   exploratory analysis
-results/     metrics and figures
+docs/                  proposal and progress report (PDF and LaTeX source)
+data/                  datasets (gitignored, see data/README.md)
+src/prepare_data.py    build the 50k subset, tokenize, bucket, split; writes dataset stats
+src/predict.py         features, logistic regression and gradient boosting, prediction metrics
+src/simulator.py       single-server non-preemptive queue simulator and scheduling policies
+src/run_all.py         replay test prompts under every policy; writes scheduling metrics and figures
+results/               metrics (JSON) and figures
 ```
 
 ## Setup
@@ -67,15 +68,31 @@ pip install -r requirements.txt
 
 LMSYS-Chat-1M is gated on Hugging Face. Accept the dataset terms, then run `huggingface-cli login` before downloading.
 
-## Milestones
+## Reproducing the results
 
-1. Access the dataset, filter to Vicuna-13B English single-turn, tokenize responses, build splits.
-2. Simulator with FCFS, shortest-prompt-first, and oracle SJF.
-3. Feature-based predictors (logistic regression, gradient boosting).
-4. DistilBERT ranker.
-5. Predicted-SJF plus starvation-aware local search; λ sweep.
+Run from the repository root, in this order:
+
+```bash
+python src/prepare_data.py   # downloads LMSYS-Chat-1M; writes data/dataset.parquet and results/dataset_stats.json
+python src/predict.py        # trains the predictors; writes results/prediction_metrics.json and data/test_scores.parquet
+python src/run_all.py        # runs the simulator; writes results/scheduling_metrics.json and results/figures/
+python src/simulator.py      # optional self-check against the worked example in the proposal
+```
+
+## Status
+
+Milestones:
+
+1. Done: access the dataset, filter to Vicuna-13B English single-turn, tokenize responses, build splits.
+2. Done: simulator with FCFS, shortest-prompt-first, and oracle SJF.
+3. Done: feature-based predictors (logistic regression, gradient boosting).
+4. Not started: DistilBERT ranker.
+5. Not started: predicted-SJF plus starvation-aware local search; λ sweep.
+
+Results so far are in `docs/progress_report.pdf`. On the 5k test set the gradient-boosted model reaches Kendall's tau of 0.62 and closes 73–80% of the FCFS-to-oracle gap in mean latency, while p99 latency at load 0.95 rises from 265 s (FCFS) to 912 s.
 
 ## Known challenges
 
 - Label noise: the same prompt resamples to different lengths, which caps achievable tau.
-- Heavy tails: rare `>1k` jobs dominate latency.
+- Capped tail: 4% of responses are exactly 512 tokens (a generation cap in the deployed service) and only 0.24% exceed 1k tokens, so this data lacks the heavy tail that makes SJF most valuable.
+- Starvation: predicted SJF makes p99 latency much worse than FCFS at high load.
