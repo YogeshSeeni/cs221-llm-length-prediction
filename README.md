@@ -1,6 +1,6 @@
 # Learned Output-Length Prediction for LLM Serving
 
-Stanford CS 221 final project. Author: Yogesh Seenichamy.
+Stanford CS 221 final project, classroom track. Author: Yogesh Seenichamy.
 
 ## Problem
 
